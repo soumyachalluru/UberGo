@@ -1,6 +1,6 @@
-# UberGo
+UberGo
 
-## Implemented uber like ride service system with below features:
+Implemented uber like ride service system with below features:
 
 1. Surge fair calculation based on number of drivers in 10 miles radius of customer's current
 location.
