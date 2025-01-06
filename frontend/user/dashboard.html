@@ -1,0 +1,1597 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/drive.png" type="image/png" />
+    <link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
+    <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="assets/css/pace.min.css" rel="stylesheet" />
+    <script src="assets/js/pace.min.js"></script>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+    <link href="assets/css/icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/dark-theme.css" />
+    <link rel="stylesheet" href="assets/css/semi-dark.css" />
+    <link rel="stylesheet" href="assets/css/header-colors.css" />
+    <link href="assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/plugins/notifications/css/lobibox.min.css" />
+    <title>UberGo User Panel</title>
+    <style>
+    .menu-title{
+        color:white;
+    }
+    .sidebar-wrapper .metismenu ul {
+    border: 1px solid #020433;
+    background: #020433;
+    color:white;
+    }
+.sidebar-wrapper .metismenu a {
+    color: #fff;
+}
+.logo-text {
+    color: white !important;
+    font-size: 17px !important;
+}
+.sidebar-wrapper{
+box-shadow:none !important;
+}
+.sidebar-header{
+    border-bottom :none !important;
+}
+
+#loader {
+            border: 12px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 12px solid #444444;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+        }
+
+        #loader1 {
+            top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+    position : fixed;
+    background-color:rgb(0 188 212 / 44%);
+        }
+
+
+        .center {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+</style>
+</head>
+
+<body>
+     <div id ="loader1" style="display: none;"><div id="loader" class="center" ></div></div> 
+    <div class="wrapper">
+    <div class="sidebar-wrapper" data-simplebar="true" style="background-color: #020433;">
+
+            <div class="sidebar-header" style="background-color: #020433;">
+                <div>
+                    <img src="images/drive.png" class="logo-icon" alt="logo icon">
+                </div>
+                <div>
+                <h4 class="logo-text">UberGo</h4>
+
+                </div>
+                <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+                </div>
+            </div>
+            <!--navigation-->
+            <ul class="metismenu" id="menu">
+                <li>
+                    <a href="dashboard.html">
+                        <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                        </div>
+                        <div class="menu-title">Dashboard</div>
+                    </a>
+                </li>
+                
+                
+                
+                    <li>
+                        <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class="bx bx-money"></i>
+                        </div>
+                        <div  class="menu-title">Profile</div>
+                    </a>
+                    <ul>
+                        <li> <a href="user_profile.html"><i class="bx bx-right-arrow-alt"></i>User Profile</a>
+                        </li>
+                        <li> <a href="change_password.html"><i class="bx bx-right-arrow-alt"></i>Change Password</a>
+                        </li>
+                
+                    </ul>
+                </li>
+                
+                <li>
+                        <a href="request_history.html">
+                        <div class="parent-icon"><i class="bx bx-money"></i>
+                        </div>
+                        <div  class="menu-title">Request History</div>
+                    </a>
+                
+                </li>
+                                <li>
+                        <a href="transaction_history.html">
+                        <div class="parent-icon"><i class="bx bx-money"></i>
+                        </div>
+                        <div  class="menu-title">Transaction History</div>
+                    </a>
+                
+                </li>
+                <li>
+                        <a href="outstation.html">
+                        <div class="parent-icon"><i class="bx bx-money"></i>
+                        </div>
+                        <div  class="menu-title">OutStation</div>
+                    </a>
+                
+                </li>
+                <li>
+                        <a href="safety.html">
+                        <div class="parent-icon"><i class="bx bx-money"></i>
+                        </div>
+                        <div  class="menu-title">Safety</div>
+                    </a>
+                
+                </li>
+                <li>
+                        <a href="setting.html">
+                        <div class="parent-icon"><i class="bx bx-money"></i>
+                        </div>
+                        <div  class="menu-title">Setting</div>
+                    </a>
+                
+                </li>
+                    <li>
+                        <a href="help.html">
+                        <div class="parent-icon"><i class="bx bx-money"></i>
+                        </div>
+                        <div  class="menu-title">Help</div>
+                    </a>
+                
+                </li>
+            
+                <li>
+                        <a href="support.html">
+                        <div class="parent-icon"><i class="bx bx-money"></i>
+                        </div>
+                        <div  class="menu-title">Support</div>
+                    </a>
+                
+                </li>
+            
+                <li>
+                    <a href="logout.html" id="logoutBtn">
+                        <div class="parent-icon"><i class='bx bx-log-out-circle'></i>
+                        </div>
+                        <div class="menu-title">Logout</div>
+                    </a>
+                </li>
+        
+            </ul>
+            <!--end navigation-->
+        </div>
+        <header>
+            <div class="topbar d-flex align-items-center" style="background-color: #020433;">
+                <nav class="navbar navbar-expand">
+                    <div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+                    </div>
+                    <div class="top-menu ms-auto">
+                        <ul class="navbar-nav align-items-center">
+                            <li class="nav-item mobile-search-icon">
+                                <a class="nav-link" href="#">   <i class='bx bx-search'></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown dropdown-large">
+                                <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class='bx bx-category'></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <div class="row row-cols-3 g-3 p-3">
+                                        <div class="col text-center">
+                                            <div class="app-box mx-auto bg-gradient-cosmic text-white"><i class='bx bx-group'></i>
+                                            </div>
+                                            <div class="app-title">Teams</div>
+                                        </div>
+                                        <div class="col text-center">
+                                            <div class="app-box mx-auto bg-gradient-burning text-white"><i class='bx bx-atom'></i>
+                                            </div>
+                                            <div class="app-title">Projects</div>
+                                        </div>
+                                        <div class="col text-center">
+                                            <div class="app-box mx-auto bg-gradient-lush text-white"><i class='bx bx-shield'></i>
+                                            </div>
+                                            <div class="app-title">Tasks</div>
+                                        </div>
+                                        <div class="col text-center">
+                                            <div class="app-box mx-auto bg-gradient-kyoto text-dark"><i class='bx bx-notification'></i>
+                                            </div>
+                                            <div class="app-title">Feeds</div>
+                                        </div>
+                                        <div class="col text-center">
+                                            <div class="app-box mx-auto bg-gradient-blues text-dark"><i class='bx bx-file'></i>
+                                            </div>
+                                            <div class="app-title">Files</div>
+                                        </div>
+                                        <div class="col text-center">
+                                            <div class="app-box mx-auto bg-gradient-moonlit text-white"><i class='bx bx-filter-alt'></i>
+                                            </div>
+                                            <div class="app-title">Alerts</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown dropdown-large">
+                                <!--<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="alert-count">7</span>-->
+                                <!--    <i class='bx bx-bell'></i>-->
+                                <!--</a>-->
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="javascript:;">
+                                        <div class="msg-header">
+                                            <p class="msg-header-title">Notifications</p>
+                                            <p class="msg-header-clear ms-auto">Marks all as read</p>
+                                        </div>
+                                    </a>
+                                    <div class="header-notifications-list">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="notify bg-light-primary text-primary"><i class="bx bx-group"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">New Customers<span class="msg-time float-end">14 Sec
+                                                ago</span></h6>
+                                                    <p class="msg-info">5 new user registered</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="notify bg-light-danger text-danger"><i class="bx bx-cart-alt"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">New Orders <span class="msg-time float-end">2 min
+                                                ago</span></h6>
+                                                    <p class="msg-info">You have recived new orders</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="notify bg-light-success text-success"><i class="bx bx-file"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">24 PDF File<span class="msg-time float-end">19 min
+                                                ago</span></h6>
+                                                    <p class="msg-info">The pdf files generated</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="notify bg-light-warning text-warning"><i class="bx bx-send"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Time Response <span class="msg-time float-end">28 min
+                                                ago</span></h6>
+                                                    <p class="msg-info">5.1 min avarage time response</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="notify bg-light-info text-info"><i class="bx bx-home-circle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">New Product Approved <span
+                                                class="msg-time float-end">2 hrs ago</span></h6>
+                                                    <p class="msg-info">Your new product has approved</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="notify bg-light-danger text-danger"><i class="bx bx-message-detail"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">New Comments <span class="msg-time float-end">4 hrs
+                                                ago</span></h6>
+                                                    <p class="msg-info">New customer comments recived</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="notify bg-light-success text-success"><i class='bx bx-check-square'></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Your item is shipped <span class="msg-time float-end">5 hrs
+                                                ago</span></h6>
+                                                    <p class="msg-info">Successfully shipped your item</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="notify bg-light-primary text-primary"><i class='bx bx-user-pin'></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">New 24 authors<span class="msg-time float-end">1 day
+                                                ago</span></h6>
+                                                    <p class="msg-info">24 new authors joined last week</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="notify bg-light-warning text-warning"><i class='bx bx-door-open'></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Defense Alerts <span class="msg-time float-end">2 weeks
+                                                ago</span></h6>
+                                                    <p class="msg-info">45% less alerts last 4 weeks</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <a href="javascript:;">
+                                        <div class="text-center msg-footer">View All Notifications</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown dropdown-large">
+                                <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="alert-count">8</span>
+                                    <i class='bx bx-comment' style="color:white"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="javascript:;">
+                                        <div class="msg-header">
+                                            <p class="msg-header-title">Messages</p>
+                                            <p class="msg-header-clear ms-auto">Marks all as read</p>
+                                        </div>
+                                    </a>
+                                    <div class="header-message-list">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-online">
+                                                    <img src="assets/images/avatars/avatar-1.png" class="msg-avatar" alt="user avatar">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Daisy Anderson <span class="msg-time float-end">5 sec
+                                                ago</span></h6>
+                                                    <p class="msg-info">The standard chunk of lorem</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-online">
+                                                    <!--<img src="assets/images/avatars/avatar-2.png" class="msg-avatar" alt="user avatar">-->
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Althea Cabardo <span class="msg-time float-end">14
+                                                sec ago</span></h6>
+                                                    <p class="msg-info">Many desktop publishing packages</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-online">
+                                                    <img src="assets/images/avatars/avatar-3.png" class="msg-avatar" alt="user avatar">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Oscar Garner <span class="msg-time float-end">8 min
+                                                ago</span></h6>
+                                                    <p class="msg-info">Various versions have evolved over</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-online">
+                                                    <img src="assets/images/avatars/avatar-4.png" class="msg-avatar" alt="user avatar">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Katherine Pechon <span class="msg-time float-end">15
+                                                min ago</span></h6>
+                                                    <p class="msg-info">Making this the first true generator</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-online">
+                                                    <img src="assets/images/avatars/avatar-5.png" class="msg-avatar" alt="user avatar">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Amelia Doe <span class="msg-time float-end">22 min
+                                                ago</span></h6>
+                                                    <p class="msg-info">Duis aute irure dolor in reprehenderit</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-online">
+                                                    <img src="assets/images/avatars/avatar-6.png" class="msg-avatar" alt="user avatar">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Cristina Jhons <span class="msg-time float-end">2 hrs
+                                                ago</span></h6>
+                                                    <p class="msg-info">The passage is attributed to an unknown</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-online">
+                                                    <img src="assets/images/avatars/avatar-7.png" class="msg-avatar" alt="user avatar">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">James Caviness <span class="msg-time float-end">4 hrs
+                                                ago</span></h6>
+                                                    <p class="msg-info">The point of using Lorem</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-online">
+                                                    <img src="assets/images/avatars/avatar-8.png" class="msg-avatar" alt="user avatar">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Peter Costanzo <span class="msg-time float-end">6 hrs
+                                                ago</span></h6>
+                                                    <p class="msg-info">It was popularised in the 1960s</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-online">
+                                                    <img src="assets/images/avatars/avatar-9.png" class="msg-avatar" alt="user avatar">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">David Buckley <span class="msg-time float-end">2 hrs
+                                                ago</span></h6>
+                                                    <p class="msg-info">Various versions have evolved over</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-online">
+                                                    <img src="assets/images/avatars/avatar-10.png" class="msg-avatar" alt="user avatar">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Thomas Wheeler <span class="msg-time float-end">2 days
+                                                ago</span></h6>
+                                                    <p class="msg-info">If you are going to use a passage</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-online">
+                                                    <img src="assets/images/avatars/avatar-11.png" class="msg-avatar" alt="user avatar">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="msg-name">Johnny Seitz <span class="msg-time float-end">5 days
+                                                ago</span></h6>
+                                                    <p class="msg-info">All the Lorem Ipsum generators</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <a href="javascript:;">
+                                        <div class="text-center msg-footer">View All Messages</div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="user-box dropdown">
+                        <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <!--<img src="assets/images/avatars/avatar-2.png" class="user-img" alt="user avatar">-->
+                            <div class="user-info ps-3">
+                                <p class="user-name mb-0" style="color:white">UserGo</p>
+                                <p class="designattion mb-0" style="color:white">User Panel</p>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="javascript:;"><i class="bx bx-user"></i><span>Profile</span></a>
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;"><i class="bx bx-cog"></i><span>Settings</span></a>
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-home-circle'></i><span>Dashboard</span></a>
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-dollar-circle'></i><span>Earnings</span></a>
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-download'></i><span>Downloads</span></a>
+                            </li>
+                            <li>
+                                <div class="dropdown-divider mb-0"></div>
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    
+    
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />    
+
+<style>
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        background-color: #dbdee4 !important;
+    }
+    .autocomplete-suggestions {
+        background-color: white;
+        border: 1px solid #ccc;
+        max-height: 190px;
+        overflow-y: auto;
+        position: absolute;
+        z-index: 999;
+    }
+    .loader {
+        display: none;
+        border: 4px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 4px solid #3498db;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    .modal .fade .show{
+        backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1 !important;
+        
+    }
+    
+</style>
+<div class="page-wrapper">
+    <div class="page-content">
+   
+
+       
+       
+        
+<div class="alert alert-warning border-0 bg-warning alert-dismissible fade show py-2" id="showwaitingstatus" style="display:none !important;">
+                                    <div class="d-flex align-items-center">
+                                        <div class="font-35 text-white"><i class="bx bxs-message-square-x"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0 text-white"> Alert</h6>
+                                            <div class="text-white">Waiting For Driver Allocation</div>
+                                        </div>
+                                    </div>
+                        
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                
+                                <div class="alert alert-primary border-0 bg-primary alert-dismissible fade show py-2" id="showwdriver" style="display:none !important;">
+                                    <div class="d-flex align-items-center">
+                                        <div class="font-35 text-white"><i class="bx bxs-message-square-x"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0 text-white"> Alert</h6>
+                                            <div class="text-white">Driver reaching to your location</div>
+                                        </div>
+                                    </div>
+                        
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                    <div class="alert alert-warning border-0 bg-warning alert-dismissible fade show py-2" id="otpverified" style="display:none !important;">
+                                    <div class="d-flex align-items-center">
+                                        <div class="font-35 text-white"><i class="bx bxs-message-square-x"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0 text-white"> Alert</h6>
+                                            <div class="text-white">Otp verified. Ride Started</div>
+                                        </div>
+                                    </div>
+                        
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                
+                                <div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2" id="reacheddesti3" style="display:none !important;">
+                                    <div class="d-flex align-items-center">
+                                        <div class="font-35 text-white"><i class="bx bxs-message-square-x"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0 text-white"> Alert</h6>
+                                            <div class="text-white">Reached your destination. Please complete your payment
+                                                <div onclick="openpaymentmodal()"> Click Here</div>
+                                                
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                
+                                    <div class="alert alert-warning border-0 bg-warning alert-dismissible fade show py-2" id="reacheddesti4" style="display:none !important;">
+                                    <div class="d-flex align-items-center">
+                                        <div class="font-35 text-white"><i class="bx bxs-message-square-x"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0 text-white"> Alert</h6>
+                                            <div class="text-white"> Payment Completed</div>
+                                        </div>
+                                    </div>
+                        
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+
+<div class="modal fade show" id="vehicleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog" style="display: none;">
+                                
+    <!--<div id="vehicleModal" class="modal" style="display: none;">-->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modalVehicleName" class="modal-title">Vehicle Details</h5>
+                <button type="button" class="btn-close" onclick="closeVehicleModal()"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Price:</strong> $<span id="modalVehiclePrice"></span></p>
+                <p><strong>Passengers:</strong> <span id="modalVehiclePassengers"></span></p>
+                <p><strong>Payment Mode:</strong></p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMode" id="cashPayment" value="Cash">
+                    <label class="form-check-label" for="cashPayment">Cash</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMode" id="onlinePayment" value="Online">
+                    <label class="form-check-label" for="onlinePayment">Online</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="confirmBooking()">Confirm</button>
+                <button type="button" class="btn btn-secondary" onclick="closeVehicleModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade show" id="paymentmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog" style="display: none;">
+                                
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modalVehicleName" class="modal-title">Complete Payment</h5>
+                <button type="button" class="btn-close" onclick="closepaymentmodal()"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Price:</strong> $<span id="amount"></span></p>
+                <p><strong>Payment Mode:<span id="paymenttype"></span></strong></p>
+
+                <p style="display:none"><strong><span id="tid"></span></strong></p>
+                <!-- <div class="form-check"> -->
+                    <!-- <input class="form-check-input" type="radio" name="paymentMode" id="cashPayment" value="Cash"> -->
+                <!--     <label class="form-check-label" for="cashPayment">Cash</label>
+                </div>
+                <div class="form-check"> -->
+                    <!-- <input class="form-check-input" type="radio" name="paymentMode" id="onlinePayment" value="Online"> -->
+                   <!--  <label class="form-check-label" for="onlinePayment">Online</label>
+                </div> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="confirmpayment()">Confirm</button>
+                <button type="button" class="btn btn-secondary" onclick="closepaymentmodal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                                
+                                
+                                
+        <div class="loader" id="loader"></div>
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <div class="card radius-10">
+                    <div class="card-body">
+                        <div class="info-box">
+                            <div class="mb-3" style="position: relative;">
+                                <label for="startDestination" class="form-label">Start Location</label>
+                                <input type="text" class="form-control" id="start" placeholder="Enter Start Location">
+                                <div id="start-suggestions" class="autocomplete-suggestions"></div>
+                            </div>
+                            <div class="mb-3" style="position: relative;">
+                                <label for="endDestination" class="form-label">Drop Location</label>
+                                <input type="text" class="form-control" id="end" placeholder="Enter Drop Location">
+                                <div id="end-suggestions" class="autocomplete-suggestions"></div>
+                            </div>
+                            <button type="submit" onclick="searchRoute()" class="btn btn-primary" id="pickup">Pick Up Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="vehicle-info">
+                    <!-- Vehicle information cards will be dynamically added here -->
+                </div>
+            </div>
+            <div class="col-12 col-lg-8">
+                <div class="card radius-10">
+                    <div class="card-body">
+                        <div id="map" style="width:100%;height:450px"></div>
+                    </div>
+                </div>
+                
+                 <div class="row" id="driverDetails" style="display:none;">
+                 <div class="col-12 col-lg-6">
+               <div class="card radius-10">
+                         <div class="card-body">
+                         <div class="table-responsive">
+                           <table id="example2" class="table align-middle mb-0">
+                             <tbody>
+                                 <tr>
+                              <td>Driver Name : </td><td><span id="driverName" class="badge bg-gradient-quepal text-white shadow-sm w-100"></span></td>
+                              </tr>
+                              <tr>
+                                  <td>Vehicle Number : </td><td>
+                                      <span id="vehicleNumber" class="badge bg-gradient-quepal text-white shadow-sm w-100"></span>
+                                  </td>
+                              </tr>
+                               <tr>
+                                  <td>OTP : </td><td>
+                                      <span id="otp" class="badge bg-gradient-quepal text-white shadow-sm w-100"></span>
+                                  </td>
+                              </tr>
+                               <tr>
+                                  <td>Driver Mobile Number : </td><td>
+                                      <span id="driverMobile" class="badge bg-gradient-quepal text-white shadow-sm w-100"></span>
+                                  </td>
+                              </tr>
+                              <tr>
+
+                             </tr>
+          
+                            </tbody>
+                          </table>
+                          </div>
+                         </div>
+                    </div>
+            </div>
+           
+            </div>
+                
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+    <!--start overlay-->
+        <div class="overlay toggle-icon"></div>
+        <!--end overlay-->
+        <!--Start Back To Top Button-->
+          <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+        <!--End Back To Top Button-->
+        <footer class="page-footer">
+            <p class="mb-0">Copyright © 2024. All right reserved.</p>
+        </footer>
+    </div>
+    <!--end wrapper-->
+    
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!--plugins-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="assets/plugins/chartjs/js/Chart.min.js"></script>
+    <script src="assets/plugins/chartjs/js/Chart.extension.js"></script>
+    <script src="assets/js/index.js"></script>
+    <!--app JS-->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+    
+    <script src="assets/plugins/notifications/js/lobibox.min.js"></script>
+    <script src="assets/plugins/notifications/js/notifications.min.js"></script>
+    <script src="assets/plugins/notifications/js/notification-custom-script.js"></script>
+    <script>
+        showloader()
+        $(document).ready(function() {
+            hideloader()
+            $('#example').DataTable();
+          } );
+
+        $(document).ready(function() {
+            var table = $('#example2').DataTable( {
+                lengthChange: false,
+                buttons: [ 'copy', 'excel', 'pdf', 'print']
+            } );
+         
+            table.buttons().container()
+                .appendTo( '#example2_wrapper .col-md-6:eq(0)' );
+        } );
+        
+        
+        
+function logout(){
+deleteCookie('user');
+window.location.href = 'login.html';
+}
+        
+        
+        
+        
+        
+  
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic291bXlhY2hhbCIsImEiOiJjbTNzanNjeTcwOW41Mm5zMmk3ZnJvcjdwIn0.6t1TwsdnR28iLYAVV5R9Vg'; // Replace with your valid Mapbox token
+
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-119.4179, 36.7783], // California coordinates
+        zoom: 6
+    });
+
+    map.addControl(new mapboxgl.NavigationControl());
+
+    let startCoordinates = null;
+    let destinationCoordinates = null;
+    let start = "";
+    let end = "";
+    let riding_status = 5;
+    let intervalId;
+     let pickuplat = "";
+    let pickuplng = "";
+     let droplat = "";
+    let droplng = "";
+    let tid = 0;
+let amount =0;
+let paymenttype = 0;
+       const interval = 2000; // Interval in milliseconds (e.g., 100ms = 10 requests per second)
+const duration = 3000; // Duration in milliseconds (3 seconds)
+    
+    intervalId = setInterval(checkRideStatus, interval);
+    function getSuggestions(inputId, suggestionsId) {
+        const input = document.getElementById(inputId);
+        const suggestions = document.getElementById(suggestionsId);
+
+        const query = input.value.trim();
+
+        if (query.length < 3) {
+            suggestions.innerHTML = '';
+            return;
+        }
+
+        const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?access_token=${mapboxgl.accessToken}&proximity=-119.4179,36.7783`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                suggestions.innerHTML = '';
+                data.features.forEach(feature => {
+                    const div = document.createElement('div');
+                    div.className = 'suggestion-item';
+                    div.textContent = feature.place_name;
+                    div.onclick = function () {
+                        input.value = feature.place_name;
+                        if (inputId === 'start') {
+                            startCoordinates = feature.center;
+                            start = feature.place_name
+                        } else if (inputId === 'end') {
+                            destinationCoordinates = feature.center;
+                             end = feature.place_name
+                        }
+                        suggestions.innerHTML = '';
+                    };
+                    suggestions.appendChild(div);
+                });
+            })
+            .catch(error => console.error('Error fetching suggestions:', error));
+    }
+
+    document.getElementById('start').addEventListener('input', () => getSuggestions('start', 'start-suggestions'));
+    document.getElementById('end').addEventListener('input', () => getSuggestions('end', 'end-suggestions'));
+
+    function searchRoute() {
+        if (!startCoordinates || !destinationCoordinates) {
+            alert('Please select both starting location and destination');
+            return;
+        }
+
+        const loader = document.getElementById('loader');
+        loader.style.display = 'block';
+ const uuid = getCookie('uuid');
+        // Fetch vehicle info
+        fetch('http://127.0.0.1:5000/getvehicleinfo', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                pickup_lat: startCoordinates[1],
+                pickup_lon: startCoordinates[0],
+                dropoff_lat: destinationCoordinates[1],
+                dropoff_lon: destinationCoordinates[0],
+                  uuid: uuid
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                loader.style.display = 'none';
+                if (data.status === 'failed') {
+                    alert(data.message);
+                    window.location.href = '/login.html';
+                    return;
+                }
+                const vehicleInfoContainer = document.getElementById('vehicle-info');
+                vehicleInfoContainer.innerHTML = ''; // Clear previous vehicle info
+                data.forEach(vehicle => {
+                    const vehicleCard = `
+                        <div class="card radius-10" onclick="openVehicleModal('${vehicle.vehicle_name}', '${vehicle.fare}', '${vehicle.passenger_count}')">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <p class="mb-0 text-secondary">${vehicle.vehicle_name}</p>
+                                        <h4 class="my-1">$${vehicle.fare}</h4>
+                                        <p class="mb-0 font-13 text-success">
+                                            <i class="bx bxs-up-arrow align-middle"></i>${vehicle.passenger_count} passengers
+                                        </p>
+                                    </div>
+                                    <div class="widgets-icons bg-light-success text-success ms-auto">
+                                        <img src="${vehicle.vehicle_image}" alt="${vehicle.vehicle_name}" width="50">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                    vehicleInfoContainer.innerHTML += vehicleCard;
+                });
+
+                // Fetch and plot route
+                const directionsUrl = `https://api.mapbox.com/directions/v5/mapbox/driving/${startCoordinates[0]},${startCoordinates[1]};${destinationCoordinates[0]},${destinationCoordinates[1]}?geometries=geojson&access_token=${mapboxgl.accessToken}`;
+                fetch(directionsUrl)
+                    .then(response => response.json())
+                    .then(routeData => {
+                        if (!routeData.routes || routeData.routes.length === 0) {
+                            alert('No route found');
+                            return;
+                        }
+                        const route = routeData.routes[0].geometry;
+
+                        // Remove existing route layer if it exists
+                        if (map.getLayer('route')) {
+                            map.removeLayer('route');
+                            map.removeSource('route');
+                        }
+
+                        // Add route to the map
+                        map.addSource('route', {
+                            type: 'geojson',
+                            data: {
+                                type: 'Feature',
+                                properties: {},
+                                geometry: route
+                            }
+                        });
+
+                        map.addLayer({
+                            id: 'route',
+                            type: 'line',
+                            source: 'route',
+                            layout: {
+                                'line-join': 'round',
+                                'line-cap': 'round'
+                            },
+                            paint: {
+                                'line-color': '#007aff',
+                                'line-width': 4
+                            }
+                        });
+
+                        // Fit map to the route
+                        const bounds = new mapboxgl.LngLatBounds();
+                        route.coordinates.forEach(coord => bounds.extend(coord));
+                        map.fitBounds(bounds, { padding: 50 });
+                    })
+                    .catch(error => console.error('Error fetching route:', error));
+            })
+            .catch(error => {
+                loader.style.display = 'none';
+                console.error('Error:', error);
+                alert('Failed to fetch vehicle information. Please try again.');
+            });
+    }
+    
+    
+    
+         
+
+
+function confirmBooking() {
+     console.log("clickeddd")
+    const selectedPaymentMode = document.querySelector('input[name="paymentMode"]:checked');
+    const amount = document.getElementById('modalVehiclePrice').innerText;
+    const uuid = getCookie('uuid');
+    if (!selectedPaymentMode) {
+        alert('Please select a payment mode');
+        return;
+    }
+
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block';
+
+   // const amount = document.getElementById('modalVehiclePrice').innerText; 
+
+    if (!amount) {
+        alert('Amount is missing. Please select a valid vehicle.');
+        loader.style.display = 'none';
+        return;
+    }
+
+    // Prepare request payload with the additional parameters
+    const requestBody = {
+        pickup_location: start, 
+        drop_location: end,
+        pickup_lati: startCoordinates[1], 
+        pickup_longi: startCoordinates[0],
+        drop_lati: destinationCoordinates[1],
+        drop_longi: destinationCoordinates[0],
+        amount: amount,
+        paying_mode: selectedPaymentMode.value,
+        uuid: uuid
+        
+        
+    };
+    
+    console.log(requestBody)
+    // API call to fetch vehicle info
+    fetch('http://127.0.0.1:5000/inittravel', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody),
+    })
+        .then(response => {
+            
+            return response.json();
+        })
+        .then(data => {
+        console.log(data)
+            loader.style.display = 'none';
+
+            // Check API response for success or failure
+            if (data.status && data.status.toLowerCase() === 'success') {
+                alert(data.message || 'Booking confirmed successfully!');
+                closeVehicleModal();
+                 document.getElementById("pickup").disabled = false; 
+                const vehicleInfoContainer = document.getElementById('vehicle-info');
+                vehicleInfoContainer.innerHTML = '';
+        
+ intervalId = setInterval(checkRideStatus, interval);
+
+
+
+            } else {
+                alert(data.message || 'Failed to confirm booking. Please try again.');
+            }
+        })
+        .catch(error => {
+            loader.style.display = 'none';
+            console.error('Error:', error);
+            alert('An error occurred while confirming the booking. Please try again later.');
+        });
+}
+
+let isFlag = 0;
+
+function checkRideStatus() {
+     console.log("checking status")
+//     const selectedPaymentMode = document.querySelector('input[name="paymentMode"]:checked');
+//     const amount = document.getElementById('modalVehiclePrice').innerText;
+     const uuid = getCookie('uuid');
+//     if (!selectedPaymentMode) {
+//         alert('Please select a payment mode');
+//         return;
+//     }
+
+//     const loader = document.getElementById('loader');
+//     loader.style.display = 'block';
+
+//   // const amount = document.getElementById('modalVehiclePrice').innerText; 
+
+//     if (!amount) {
+//         alert('Amount is missing. Please select a valid vehicle.');
+//         loader.style.display = 'none';
+//         return;
+//     }
+
+
+
+
+
+
+
+function CheckSession(id) {
+    if (id !== undefined && id !== null) {
+        fetch('http://127.0.0.1:5000/checksession', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ uuid: id }),
+        })
+        .then(response => {
+            if (!response.ok) {
+                if (response.status === 400) {
+                    handleUnauthorized();
+                    throw new Error('Unauthorized: Session is invalid.');
+                }
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.session_status === 'unverified' || data.status === 'Failed') {
+                handleUnauthorized();
+            } else {
+                console.log('All SET');
+            }
+        })
+        .catch(error => {
+            console.error('An error occurred:', error.message);
+        });
+    } else {
+        console.warn('Invalid session ID. Redirecting to login...');
+        handleUnauthorized();
+    }
+}
+
+
+function handleUnauthorized() {
+    deleteCookie('user');
+    window.location.href = 'login.html';
+}
+
+function deleteCookie(name) {
+    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
+
+CheckSession(uuid);
+
+
+
+
+
+
+
+
+    // Prepare request payload with the additional parameters
+    const requestBody = {
+       
+        uuid: uuid
+        
+        
+    };
+    
+    console.log(requestBody)
+    // API call to fetch vehicle info
+    fetch('http://127.0.0.1:5000/gettravelhistory', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody),
+    })
+        .then(response => {
+            if (response.status ===401) {
+                
+                // redirect to login / clear cookies
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+           // loader.style.display = 'none';
+              console.log(data);
+            // Check API response for success or failure
+            if (data.status && data.status.toLowerCase() === 'success') {
+                riding_status = data.riding_status
+                const inputElement = document.getElementById("start");
+    inputElement.value = data.pickup_location; 
+      const inputElement1 = document.getElementById("end");
+    inputElement1.value = data.drop_location; 
+       pickuplat = data.pickup_lati;
+     pickuplng = data.pickup_log;
+      droplat = data.drop_lati;
+     droplng = data.drop_log;
+     
+
+     tid = data.id;
+     amount = data.amount;
+     paymenttype = data.paying_mode;
+
+
+                changeuii()
+
+
+
+if(data.riding_status != 5){
+        document.getElementById('driverDetails').style.display = 'block';
+        const requestBody = {
+        uuid: uuid,
+        driverid: data.driverid
+    };
+
+ fetch('http://127.0.0.1:5000/getdriverinfo', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            
+        },
+         body: JSON.stringify(requestBody),
+    })
+        .then(response => {
+             
+           return  response.json()
+        })
+        .then(driverData => {
+            console.log(driverData)
+            // Populate the data into the table
+            document.getElementById('driverName').textContent = driverData.full_name;
+            document.getElementById('vehicleNumber').textContent = driverData.vehicle_no;
+            document.getElementById('otp').textContent = data.otp || 'N/A';
+            document.getElementById('driverMobile').textContent = driverData.mobile;
+        })
+        .catch(error => {
+            console.error('Error fetching driver details:', error);
+           // alert('Unable to fetch driver details. Please try again later.');
+        });
+    
+     if(isFlag==0){
+           isFlag = 1
+          
+        
+        
+          const directionsUrl = `https://api.mapbox.com/directions/v5/mapbox/driving/${pickuplng},${pickuplat};${droplng},${droplat}?geometries=geojson&access_token=${mapboxgl.accessToken}`;
+                fetch(directionsUrl)
+                    .then(response => response.json())
+                    .then(routeData => {
+                        if (!routeData.routes || routeData.routes.length === 0) {
+                            alert('No route found');
+                            return;
+                        }
+                        const route = routeData.routes[0].geometry;
+
+                        // Remove existing route layer if it exists
+                        if (map.getLayer('route')) {
+                            map.removeLayer('route');
+                            map.removeSource('route');
+                        }
+
+                        // Add route to the map
+                        map.addSource('route', {
+                            type: 'geojson',
+                            data: {
+                                type: 'Feature',
+                                properties: {},
+                                geometry: route
+                            }
+                        });
+
+                        map.addLayer({
+                            id: 'route',
+                            type: 'line',
+                            source: 'route',
+                            layout: {
+                                'line-join': 'round',
+                                'line-cap': 'round'
+                            },
+                            paint: {
+                                'line-color': '#007aff',
+                                'line-width': 4
+                            }
+                        });
+
+                        // Fit map to the route
+                        const bounds = new mapboxgl.LngLatBounds();
+                        route.coordinates.forEach(coord => bounds.extend(coord));
+                        map.fitBounds(bounds, { padding: 50 });
+                    })
+                    .catch(error => console.error('Error fetching route:', error));
+           
+    
+   
+       
+       
+}
+    
+}
+
+
+            } else {
+                 riding_status = 5;
+                clearInterval(intervalId);
+            
+               changeuii()
+            }
+        })
+        .catch(error => {
+           // loader.style.display = 'none';
+             clearInterval(intervalId);
+            console.error('Error:', error);
+           // alert('An error occurred while confirming the booking. Please try again later.');
+            //  document.getElementById("showwaitingstatus").style.display = "none";
+            //           document.getElementById("showwdriver").style.display = "none";
+                      changeuii()
+                     
+        });
+}
+
+ 
+        
+
+
+
+function changeuii(){
+    if(riding_status==5){
+                    document.getElementById("driverDetails").style.display = "none";
+                     document.getElementById("pickup").disabled = false;
+                     document.getElementById("showwaitingstatus").style.display = "none";
+                      document.getElementById("showwdriver").style.display = "none";
+                        document.getElementById("start").disabled = false;
+                        document.getElementById("end").disabled = false;
+                         document.getElementById("showwaitingstatus").style.display = "none";
+                          document.getElementById("showwdriver").style.display = "none";
+                          document.getElementById("otpverified").style.display = "none";
+                           document.getElementById("reacheddesti3").style.display = "none";
+                            document.getElementById("reacheddesti4").style.display = "none";
+                     
+                }else{
+                    if(riding_status==0){
+                        document.getElementById("driverDetails").style.display = "none";
+                        document.getElementById("start").disabled = true;
+                        document.getElementById("end").disabled = true;
+                        document.getElementById("pickup").disabled = true; 
+                        const vehicleInfoContainer = document.getElementById('vehicle-info');
+                        vehicleInfoContainer.innerHTML = '';
+                        
+                        document.getElementById("showwaitingstatus").style.display = "block";
+                          document.getElementById("showwdriver").style.display = "none";
+                            document.getElementById("otpverified").style.display = "none";
+                             document.getElementById("reacheddesti3").style.display = "none";
+                            document.getElementById("reacheddesti4").style.display = "none";
+                    }
+                    else if(riding_status==1){
+                        document.getElementById("driverDetails").style.display = "block";
+                        document.getElementById("start").disabled = true;
+                        document.getElementById("end").disabled = true;
+                        document.getElementById("pickup").disabled = true; 
+                        const vehicleInfoContainer = document.getElementById('vehicle-info');
+                        vehicleInfoContainer.innerHTML = '';
+                        
+                        document.getElementById("showwaitingstatus").style.display = "none";
+                          document.getElementById("showwdriver").style.display = "block";
+                           document.getElementById("otpverified").style.display = "none";
+                            document.getElementById("reacheddesti3").style.display = "none";
+                            document.getElementById("reacheddesti4").style.display = "none";
+                        
+                    }
+                    else if(riding_status==2){
+                        document.getElementById("driverDetails").style.display = "block";
+                        document.getElementById("start").disabled = true;
+                        document.getElementById("end").disabled = true;
+                        document.getElementById("pickup").disabled = true; 
+                        const vehicleInfoContainer = document.getElementById('vehicle-info');
+                        vehicleInfoContainer.innerHTML = '';
+                        
+                        document.getElementById("showwaitingstatus").style.display = "none";
+                          document.getElementById("showwdriver").style.display = "none";
+                            document.getElementById("otpverified").style.display = "block";
+                             document.getElementById("reacheddesti3").style.display = "none";
+                            document.getElementById("reacheddesti4").style.display = "none";
+                        
+                    }
+                     else if(riding_status==3){
+                        document.getElementById("driverDetails").style.display = "block";
+                        document.getElementById("start").disabled = true;
+                        document.getElementById("end").disabled = true;
+                        document.getElementById("pickup").disabled = true; 
+                        const vehicleInfoContainer = document.getElementById('vehicle-info');
+                        vehicleInfoContainer.innerHTML = '';
+                        
+                        document.getElementById("showwaitingstatus").style.display = "none";
+                          document.getElementById("showwdriver").style.display = "none";
+                            document.getElementById("otpverified").style.display = "none";
+                             document.getElementById("reacheddesti3").style.display = "block";
+                            document.getElementById("reacheddesti4").style.display = "none";
+                        
+                    }
+                    else if(riding_status==4){
+                        document.getElementById("driverDetails").style.display = "block";
+                        document.getElementById("start").disabled = true;
+                        document.getElementById("end").disabled = true;
+                        document.getElementById("pickup").disabled = true; 
+                        const vehicleInfoContainer = document.getElementById('vehicle-info');
+                        vehicleInfoContainer.innerHTML = '';
+                        
+                        document.getElementById("showwaitingstatus").style.display = "none";
+                          document.getElementById("showwdriver").style.display = "none";
+                            document.getElementById("otpverified").style.display = "none";
+                             document.getElementById("reacheddesti3").style.display = "none";
+                            document.getElementById("reacheddesti4").style.display = "block";
+                            location.reload()
+                        
+                    }
+                }
+}
+
+
+
+
+
+
+
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    function openVehicleModal(vehicleName, vehiclePrice, vehiclePassengers) {
+    // Populate modal with vehicle details
+    document.getElementById('modalVehicleName').innerText = vehicleName;
+    document.getElementById('modalVehiclePrice').innerText = vehiclePrice;
+    document.getElementById('modalVehiclePassengers').innerText = vehiclePassengers;
+
+    // Display the modal
+    const modal = document.getElementById('vehicleModal');
+    modal.style.display = 'block';
+}
+
+function closeVehicleModal() {
+    // Hide the modal
+    const modal = document.getElementById('vehicleModal');
+    modal.style.display = 'none';
+}
+
+// function confirmBooking() {
+//     console.log("clickeddd")
+//     const selectedPaymentMode = document.querySelector('input[name="paymentMode"]:checked');
+//     if (!selectedPaymentMode) {
+//         alert('Please select a payment mode');
+//         return;
+//     }
+//     alert(`Booking confirmed with ${selectedPaymentMode.value} payment mode.`);
+//     closeVehicleModal();
+// }
+
+ function openpaymentmodal() {
+    document.getElementById('tid').innerText = tid;
+
+    document.getElementById('amount').innerText = amount;
+
+    document.getElementById('paymenttype').innerText = paymenttype;
+
+    // Display the modal
+    const modal = document.getElementById('paymentmodal');
+    modal.style.display = 'block';
+}
+
+function closepaymentmodal() {
+    // Hide the modal
+    const modal = document.getElementById('paymentmodal');
+    modal.style.display = 'none';
+}
+
+function confirmpayment() {
+     console.log("clickeddd")
+    const id = document.getElementById('tid').innerText;
+    const amount = document.getElementById('amount').innerText;
+    const uuid = getCookie('uuid');
+    
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block';
+
+    // const amount = document.getElementById('amount').innerHTML; 
+
+    // if (!amount) {
+    //     alert('Amount is missing.');
+    //     loader.style.display = 'none';
+    //     return;
+    // }
+
+    // Prepare request payload with the additional parameters
+    const requestBody = {
+        amount: amount,
+        id: id,
+        uuid: uuid
+        
+        
+    };
+    
+    console.log(requestBody)
+    // API call to fetch vehicle info
+    showloader();
+    fetch('http://127.0.0.1:5000/afterpayment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody),
+    })
+        .then(response => {
+          hideloader();  
+            return response.json();
+        })
+        .then(data => {
+        console.log(data)
+            loader.style.display = 'none';
+
+            // Check API response for success or failure
+            if (data.status && data.status.toLowerCase() === 'success') {
+                alert(data.message || 'Payment Completed successfully!');
+                location.reload();
+
+            } else {
+                alert(data.message || 'Failed to Completed Your Payment. Please try again.');
+            }
+        })
+        .catch(error => {
+            loader.style.display = 'none';
+            console.error('Error:', error);
+            alert('An error occurred while confirming the Payment. Please try again later.');
+        });
+}
+
+function showloader(){
+    // document.querySelector(
+    //                 "body").style.visibility = "hidden";
+                document.querySelector(
+                    "#loader1").style.display = "block";
+}
+
+
+function hideloader(){
+    document.querySelector(
+                    "#loader1").style.display = "none";
+                // document.querySelector(
+                //     "body").style.visibility = "visible";
+}
+</script>
+
+
+    
+</body>
+
+</html>
+

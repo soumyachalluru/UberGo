@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/drive.png" type="image/png" />
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+  <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+  <link href="assets/css/pace.min.css" rel="stylesheet" />
+  <script src="assets/js/pace.min.js"></script>
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="assets/css/app.css" rel="stylesheet">
+  <link href="assets/css/icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/plugins/notifications/css/lobibox.min.css" />
+  <title>UberGo User Panel</title>
+  <style>
+    .loginbg {
+        margin-top: 15%;
+        position: static;
+        background-image: url('images/highway.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 135vh;
+        background-attachment: scroll;
+    }
+    .loginbg::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 111vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+    .wrapper {
+        position: relative;
+        z-index: 2;
+        margin-top: 50px;
+        padding: 20px;
+    }
+    .card {
+        background: #fff;
+        opacity: 1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="loginbg">
+  <div class="wrapper">
+    <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
+      <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+          <div class="col mx-auto">
+            <div class="card">
+              <div class="card-body">
+                <div class="border p-4 rounded">
+                  <div class="text-center">
+                    <h3 class="">Register</h3>
+                    <div class="login-separater text-center mb-4">
+                      <hr/>
+                    </div>
+                  </div>
+                  <div class="form-body">
+                    <form id="registrationForm" class="row g-3">
+                      <div class="col-12">
+                        <label for="full_name" class="form-label">Full name</label>
+                        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full Name" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="email" class="form-label">Email Id</label>
+                        <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email Id" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="mobile" class="form-label">Mobile Number</label>
+                        <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile No" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select class="form-select" id="gender" name="gender" required>
+                          <option value="" selected>Choose Gender</option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="state" class="form-label">State</label>
+                        <input type="text" class="form-control" id="state" name="state" placeholder="State" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="zip" class="form-label">ZIP</label>
+                        <input type="text" class="form-control" id="zip" name="zip" placeholder="ZIP Code" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="role" class="form-label">Select Role</label>
+                        <select class="form-control" id="driverstatus" name="driverstatus">
+                            <option value="0" selected>Customer</option>
+                        </select>
+                    </div>
+                      
+                      
+                      <div class="col-12">
+                        <div class="d-grid">
+                          <button type="submit" class="btn btn-primary" id="submitBtn">Register</button>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="col-12">
+                      <div class="text-center">
+                        <p class="mb-0">Already have an account? <a href="login.html">Sign in here</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>            			
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/plugins/notifications/js/lobibox.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#registrationForm').on('submit', function (e) {
+        e.preventDefault();
+
+        // Collect form data
+        const data = {
+          full_name: $('#full_name').val(),
+          emailid: $('#emailid').val(),
+          mobile: $('#mobile').val(),
+          gender: $('#gender').val(),
+          password: $('#password').val(),
+          address: $('#address').val(),
+          city: $('#city').val(),
+          state: $('#state').val(),
+          zip: $('#zip').val(),
+          driverstatus: $('#driverstatus').val()
+        };
+
+        // Show loader while waiting for the response (You can add a loader image here)
+        $('#submitBtn').prop('disabled', true).text('Registering...');
+
+        // Sending data to the registration endpoint
+        fetch('http://127.0.0.1:5000/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+          $('#submitBtn').prop('disabled', false).text('Register');
+
+          if (data.status === 'Success') {
+                   window.location.href = 'login.html';
+            Lobibox.notify('success', {
+                
+              msg: data.message || 'Registration successful!',
+              position: 'top right'
+            });
+            $('#registrationForm')[0].reset(); // Reset form after success
+          } else {
+            Lobibox.notify('error', {
+              msg: data.message || 'Registration failed! Please try again.',
+              position: 'top right'
+            });
+          }
+        })
+        .catch(error => {
+          $('#submitBtn').prop('disabled', false).text('Register');
+          Lobibox.notify('error', {
+            pauseDelayOnHover: true,
+            position: 'top right',
+            msg: 'An error occurred. Please try again later.' // Generic error message
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

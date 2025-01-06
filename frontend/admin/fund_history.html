@@ -1,0 +1,111 @@
+<?php
+session_start();
+ob_start();
+include("include/connection.php");
+
+// Check if the UUID cookie exists and sanitize input
+$u_uname = isset($_COOKIE['uuid']) ? mysqli_real_escape_string($selecter, $_COOKIE['uuid']) : '';
+
+// Query to verify UUID and its status
+$sql4 = "SELECT * FROM ods WHERE uuid='$u_uname' AND status='verified'";
+$result4 = mysqli_query($selecter, $sql4);
+
+if ($result4 && $result4->num_rows > 0) {
+    $row4 = $result4->fetch_assoc();
+    $u_uname = mysqli_real_escape_string($selecter, $row4['user_id']);
+    $br_id = $u_uname; // Assuming 'user_id' serves as the 'br_id'
+} else {
+    header("Location: logout.php");
+    exit;
+}
+
+// Fetch user details based on email_id
+$sql = "SELECT * FROM users WHERE email_id='$u_uname'";
+$result = mysqli_query($selecter, $sql);
+
+if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $userid1 = mysqli_real_escape_string($selecter, $row['user_id']);
+    $sponsor_id1 = mysqli_real_escape_string($selecter, $row['sponsorid']);
+    $joining_date1 = mysqli_real_escape_string($selecter, $row['joining_date']);
+    $full_name = mysqli_real_escape_string($selecter, $row['full_name']);
+} else {
+    header("Location: logout.php");
+    exit;
+}
+?>
+<?php include 'include/header.php'; ?>
+<?php include 'include/aside.php'; ?>
+<style>
+    ul {
+    background-color: 433;
+}
+</style>
+
+<!--start page wrapper -->
+<div class="page-wrapper">
+    <div class="page-content">
+        <div class="row">
+        <h6 class="mb-0 text-uppercase">Fund History</h6>
+        <hr/>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example2" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>SR. No</th>
+                                <th>User ID</th>
+                                <th>Transaction ID</th>
+                                <th>PG Charge</th>
+                                <th>Payment mode</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Transaction Date</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $sql = "SELECT * FROM webhook
+";
+                            $result = $link->query($sql);
+                            $sr = 1; // Initialize serial number
+                            
+                            if ($result->num_rows > 0) {
+                                // Output data of each row
+                                while($row = $result->fetch_assoc()) {
+                                    $id = $row['id'];
+                                    ?>
+                                    
+                                    <tr>
+                                    <td><?php echo $sr ?></td>
+                                    <td><?php echo $row['user_id'] ?></td>
+                                    <td><?php echo $row['unique_transaction_reference'] ?></td>
+                                    
+                                    <td><?php echo $row['service_charge_with_gst'] ?></td>
+                                    <td><?php echo 
+                                    $row['payment_mode'] ?></td>
+                                   <td><?php echo $row['amount'] ?></td>
+                                   <td><?php echo $row['status'] ?></td>
+                                   <td><?php echo $row['transaction_date'] ?></td>
+                               
+                                   
+                                    </tr>
+                                    <?php
+                                    $sr++; 
+                                }
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--end page wrapper -->
+
+<?php include 'include/footer.php'; ?>
