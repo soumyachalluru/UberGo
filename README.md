@@ -9,10 +9,11 @@ location.
 4. Bill generation and management of rides history for customers and drivers
 5. Statistics: Revenue, Total number of rides, Total customers and drivers
 6. Deployed the website on AWS
-   public ip: 3.129.95.65
-   urls: http://3.129.95.65/driver/login.html
-         http://3.129.95.65/user/login.html
-         http://3.129.95.65/admin/login.html
+
+Public ip: 3.129.95.65
+Urls: http://3.129.95.65/driver/login.html
+      http://3.129.95.65/user/login.html
+      http://3.129.95.65/admin/login.html
 
 Performance Testing for: 10,000 drivers and 10000 customers 
 
