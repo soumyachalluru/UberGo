@@ -16,10 +16,13 @@ location.
 
 Performance Testing for: 10,000 drivers and 10000 customers 
 
+Tech Stack:
 
-![Tech Stack:](images/techstack.png)
+![Tech Stack](images/techstack.png)
 
-![Screenshot:](images/UI.png)
+Screenshot:
+
+![Screenshot](images/UI.png)
 For more screenshots, please refer the report. 
 
 ## BACKEND
