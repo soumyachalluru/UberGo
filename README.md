@@ -10,10 +10,10 @@ location.
 5. Statistics: Revenue, Total number of rides, Total customers and drivers
 6. Deployed the website on AWS <br />
     public ip: http://3.129.95.65/ <br />
-    urls: 
-    http://3.129.95.65/driver/login.html <br />
-    http://3.129.95.65/user/login.html <br />
-    http://3.129.95.65/admin/login.html <br />
+    urls:
+   http://3.129.95.65/driver/login.html <br />
+       http://3.129.95.65/user/login.html <br />
+       http://3.129.95.65/admin/login.html <br />
 
 Performance Testing for: 10,000 drivers and 10000 customers 
 
