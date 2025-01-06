@@ -8,13 +8,12 @@ location.
 3. Google maps integration for allowing customer to select starting point and destination.
 4. Bill generation and management of rides history for customers and drivers
 5. Statistics: Revenue, Total number of rides, Total customers and drivers
-6. Deployed the website on AWS
-
-public ip: 3.129.95.65 <br />
-urls: <br />
-http://3.129.95.65/driver/login.html <br />
-http://3.129.95.65/user/login.html <br />
-http://3.129.95.65/admin/login.html <br />
+6. Deployed the website on AWS <br />
+    public ip: http://3.129.95.65/ <br />
+    urls: 
+    http://3.129.95.65/driver/login.html <br />
+    http://3.129.95.65/user/login.html <br />
+    http://3.129.95.65/admin/login.html <br />
 
 Performance Testing for: 10,000 drivers and 10000 customers 
 
