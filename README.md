@@ -1,6 +1,6 @@
-UberGo
+# UberGo
 
-Implemented uber like ride service system with below features:
+## Implemented uber like ride service system with below features:
 
 1. Surge fair calculation based on number of drivers in 10 miles radius of customer's current
 location.
@@ -12,17 +12,18 @@ location.
 
 public ip: 3.129.95.65
 
-urls: http://3.129.95.65/driver/login.html
-      http://3.129.95.65/user/login.html
-      http://3.129.95.65/admin/login.html
+urls: 
+http://3.129.95.65/driver/login.html
+http://3.129.95.65/user/login.html
+http://3.129.95.65/admin/login.html
 
 Performance Testing for: 10,000 drivers and 10000 customers 
 
-Tech Stack:
+## Tech Stack:
 
 ![Tech Stack](images/techstack.png)
 
-Screenshot:
+## Screenshot:
 
 ![Screenshot](images/UI.png)
 For more screenshots, please refer the report. 
