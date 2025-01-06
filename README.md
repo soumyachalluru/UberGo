@@ -11,6 +11,7 @@ location.
 6. Deployed the website on AWS
 
 public ip: 3.129.95.65
+
 urls: http://3.129.95.65/driver/login.html
       http://3.129.95.65/user/login.html
       http://3.129.95.65/admin/login.html
